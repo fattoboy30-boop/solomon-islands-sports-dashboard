@@ -1,0 +1,91 @@
+Yes — here’s the exact setup I’d give OpenCode for your dashboard project. OpenCode’s docs say to first initialize the project so it can create an `AGENTS.md` file, then use Plan mode before switching to Build mode. [open-code](https://open-code.ai/en/docs/rules)
+
+## AGENTS.md
+Save this as `AGENTS.md` in the project root:
+
+```md
+# Solomon Islands Sports Dashboard
+
+## Project goal
+Build a dashboard that shows Solomon Islands sports performance against world standard across multiple sports.
+
+## Scope
+Include:
+- Football
+- Athletics
+- Rugby
+- Basketball
+- Olympic participation
+
+## Data model
+Use these fields:
+- sport
+- athlete_or_team
+- event_or_match
+- opponent_or_country
+- date
+- result
+- competition
+- world_standard_type
+- world_standard_value
+- source_url
+
+## Data rules
+- Prefer official or widely used sports data sources.
+- Keep source URLs in the dataset.
+- Do not invent results.
+- Normalize dates to YYYY-MM-DD.
+- Keep one row per match, race, or event.
+
+## UI requirements
+- Overview cards.
+- Filters by sport, year, opponent, and competition.
+- Trend charts.
+- Result tables.
+- World-standard comparison sections.
+
+## Code style
+- Keep components small and reusable.
+- Separate data loading, transformation, and UI.
+- Use clear filenames and simple folder structure.
+
+## Working rules
+- Start with a plan before coding.
+- Build in small steps.
+- Ask before changing the data model.
+- Prefer maintainable code over clever code.
+```
+
+## OpenCode prompt
+Paste this after initializing the project:
+
+> Analyze this project and create or follow AGENTS.md instructions.  
+> First produce a plan for a Solomon Islands sports dashboard.  
+> The dashboard must compare performance against world standard.  
+> Include football, athletics, rugby, basketball, and Olympic participation.  
+> Use this data model: sport, athlete_or_team, event_or_match, opponent_or_country, date, result, competition, world_standard_type, world_standard_value, source_url.  
+> Then build the data ingestion layer, dashboard layout, filters, charts, and tables.
+
+## Build sequence
+Use this order with OpenCode:
+1. Initialize project and create `AGENTS.md`.
+2. Ask for a plan.
+3. Review and refine the plan.
+4. Switch to build mode.
+5. Generate the data pipeline.
+6. Build the dashboard UI.
+7. Add charts and filters.
+8. Test with football first, then add the other sports. [opencode](https://opencode.ai/docs/)
+
+## Folder structure
+A simple structure like this should work well:
+- `data/` for CSV files.
+- `src/` for app logic.
+- `components/` for reusable UI pieces.
+- `pages/` or `app/` for dashboard screens.
+- `AGENTS.md` for agent instructions. [agents](https://agents.md)
+
+## Practical tip
+For your use case, football will be the easiest first dataset because results and fixtures are available from established result pages, while athletics gives you the clearest “world standard” comparison through performance marks and athlete profiles. [espn.co](https://www.espn.co.uk/football/team/results/_/id/4861/sol)
+
+Would you like me to write the **next OpenCode prompt** that tells it to build the database and import script first?

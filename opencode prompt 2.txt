@@ -1,0 +1,37 @@
+Use OpenCode to build the dashboard in two passes: first the data layer, then the UI. OpenCode supports a plan-then-build workflow, and its docs describe project rules via `AGENTS.md` plus specialized agents/modes for different tasks. [opencode](https://opencode.ai/docs/)
+
+## Exact build prompt
+Paste this into OpenCode after the plan is approved:
+
+> Build the Solomon Islands sports dashboard.  
+> Create a normalized sports dataset with one row per result/event and these columns: sport, athlete_or_team, event_or_match, opponent_or_country, date, result, competition, world_standard_type, world_standard_value, source_url.  
+> Seed the dataset with verified examples from football, athletics, rugby, basketball, and Olympic participation.  
+> Football examples must include Solomon Islands 2-10 Bulgaria and St Kitts & Nevis 4-2 Solomon Islands in 2026 friendly matches. [espn](https://www.espn.in/football/match/_/gameId/401867001/solomon-islands-st-kitts-and-nevis)
+> Athletics examples must include Kevin Pio’s 100m personal best of 11.54 and Sharon Firisua’s World Athletics profile and event records. [worldathletics](https://worldathletics.org/athletes/solomon-islands/kevin-pio-14836675)
+> Build scripts to validate dates, required columns, and source URLs.  
+> Then build the dashboard UI with summary cards, sport filters, year filters, tables, and comparison charts.
+
+## Data rules to enforce
+- Keep one row per match, race, or event.
+- Normalize dates to YYYY-MM-DD.
+- Do not invent results.
+- Preserve source URLs for every row.
+- Use world_standard_type values that differ by sport, such as ranking, score points, personal best, or qualification stage. [worldathletics](https://worldathletics.org/athletes/solomon-islands/sharon-firisua-14624966)
+
+## First seed rows
+- Football, Solomon Islands, vs Bulgaria, 2026-03-27, 2-10, International Friendly. [espn](https://www.espn.com/soccer/match/_/gameId/401861601/bulgaria-solomon-islands)
+- Football, Solomon Islands, vs St Kitts & Nevis, 2026-03-30, 2-4, International Friendly. [espn](https://www.espn.in/football/match/_/gameId/401867001/solomon-islands-st-kitts-and-nevis)
+- Athletics, Kevin Pio, 100m, 11.54, personal best, score 737. [worldathletics](https://worldathletics.org/athletes/solomon-islands/kevin-pio-14836675)
+- Athletics, Sharon Firisua, 3000m steeplechase, 11:27.42, national record, score 895. [worldathletics](https://worldathletics.org/athletes/solomon-islands/sharon-firisua-14624966)
+- Athletics, Sharon Firisua, marathon, 3:02:07, national record, score 838. [worldathletics](https://worldathletics.org/athletes/solomon-islands/sharon-firisua-14624966)
+
+## Suggested implementation order
+1. Create the CSV/JSON schema.
+2. Add validation and import scripts.
+3. Build filters and summary metrics.
+4. Add charts by sport and year.
+5. Add detail tables with clickable source links.
+6. Expand to more sports and historical rows.  
+That order matches how OpenCode is intended to move from planning into implementation. [ai.sulat](https://ai.sulat.com/the-definitive-guide-to-opencode-from-first-install-to-production-workflows-aae1e95855fb)
+
+Would you like the next message to be the **actual CSV starter file content** or a **full OpenCode task list** broken into steps?

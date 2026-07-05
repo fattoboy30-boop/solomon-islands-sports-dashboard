@@ -1,0 +1,46 @@
+Continue by telling OpenCode to build the **data pipeline first**, then the dashboard UI. OpenCode’s docs describe a workflow where you create a plan, then switch from Plan mode to Build mode to implement it. [opencode](https://opencode.ai/docs/)
+
+## OpenCode task prompt
+Paste this next:
+
+> Build the data layer for the Solomon Islands sports dashboard.  
+> Create a normalized dataset with these fields: sport, athlete_or_team, event_or_match, opponent_or_country, date, result, competition, world_standard_type, world_standard_value, source_url.  
+> Seed it with football, athletics, rugby, basketball, and Olympic participation rows.  
+> Add scripts to load, validate, and export the data as CSV or JSON.  
+> Then build the dashboard UI with overview cards, filters, tables, and charts.
+
+## Data sources to seed
+Use these sources first because they already expose usable Solomon Islands data:
+- Football results and match pages from ESPN. [espn.co](https://www.espn.co.uk/football/team/results/_/id/4861/sol)
+- World Athletics athlete profiles for Kevin Pio and Sharon Firisua. [worldathletics](https://worldathletics.org/athletes/solomon-islands/kevin-pio-14836675)
+- World Athletics event results for Solomon Islands championships. [worldathletics](https://worldathletics.org/competition/calendar-results/results/7202181)
+- Olympedia for athletics/Olympic participation history. [olympedia](https://www.olympedia.org/countries/SOL/sports/ATH.3)
+- Rugby and basketball result pages from Sofascore. [sofascore](https://www.sofascore.com/basketball/team/solomon-islands/266788)
+
+## Suggested build order
+1. Create `data/solomon_islands_sports.csv`.
+2. Add a validation script for required columns and date format.
+3. Build a loader that reads the CSV into the app.
+4. Make summary cards and filters.
+5. Add charts by sport and year.
+6. Add a detail table with source links.  
+That sequence keeps the project modular and matches the way OpenCode is designed to move from planning into implementation. [open-code](https://open-code.ai/en/docs/rules)
+
+## Best “world standard” fields
+For your dashboard, these benchmark types will work well:
+- Football: FIFA ranking, opponent strength, competition stage.
+- Athletics: personal best, season best, qualifying standard, score points.
+- Rugby and basketball: match margin, tournament stage, ranking.
+- Olympic sports: heat/round reached, qualification status, best result. [worldathletics](https://worldathletics.org/athletes/solomon-islands/sharon-firisua-14624966)
+
+## Useful starter rows
+A few initial rows you can ask OpenCode to insert:
+- Kevin Pio, 100m, 11.54, score 737. [worldathletics](https://worldathletics.org/athletes/solomon-islands/kevin-pio-14836675)
+- Sharon Firisua, 100m / half marathon / marathon profile. [worldathletics](https://worldathletics.org/athletes/solomon-islands/sharon-firisua-14624966)
+- Solomon Islands vs Fiji, 0-1. [espn](https://www.espn.com/soccer/match/_/gameId/720816/fiji-solomon-islands)
+- Solomon Islands vs St Kitts & Nevis, 4-2 loss. [africa.espn](https://africa.espn.com/football/match/_/gameId/401867001/solomon-islands-st-kitts-and-nevis)
+- Solomon Islands athletics championship results in 10,000m, javelin, and relays. [worldathletics](https://worldathletics.org/competition/calendar-results/results/7202181)
+
+I can now write the **exact OpenCode build prompt** for either:
+- the **data pipeline only**, or
+- the **full dashboard app** including UI and charts.

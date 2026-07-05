@@ -1,0 +1,35 @@
+Here’s a **task list** you can give OpenCode to build the Solomon Islands sports dashboard in a clean sequence. OpenCode’s docs say build work should be handled in the primary build agent, while plan/build modes are used to separate design from implementation. [opencode](https://opencode.ai/docs/agents/)
+
+## Task list
+1. Create the project structure and `AGENTS.md` rules file.  
+2. Define the normalized data schema for sports results and benchmarks.  
+3. Create the starter dataset for football, athletics, rugby, basketball, and Olympic participation.  
+4. Add validation scripts for required columns, date formats, and source URLs.  
+5. Build the data import layer to load CSV or JSON into the app.  
+6. Create summary metrics such as wins, losses, best times, and rankings.  
+7. Build filters for sport, year, opponent, competition, and world-standard type.  
+8. Create charts for performance trends and opponent comparisons.  
+9. Add detailed result tables with clickable source links.  
+10. Test the dashboard with football first, then expand to other sports.  
+
+## Build priorities
+Start with football because match results and international fixtures are easiest to standardize, including recent Solomon Islands friendly and qualifying results. Then add athletics because World Athletics gives you performance marks and athlete profiles that map well to world-standard comparisons. After that, add rugby and basketball using result pages, and finally bring in Olympic participation history. [espn](https://www.espn.com/soccer/team/results/_/id/4861/league/FIFA.FRIENDLY)
+
+## OpenCode prompt
+Use this prompt after the plan is approved:
+
+> Implement the dashboard step by step.  
+> First create the project files, `AGENTS.md`, and folder structure.  
+> Then create the normalized sports dataset schema and seed it with verified Solomon Islands rows.  
+> Add validation for dates, source URLs, and required fields.  
+> Build the import pipeline, summary cards, filters, tables, and charts.  
+> Use football first, then athletics, rugby, basketball, and Olympic participation.  
+> Do not invent results. Keep all source URLs in the dataset.
+
+## Suggested check-in points
+- After schema creation, confirm the columns are correct.  
+- After seeding data, confirm all rows have valid sources.  
+- After UI build, confirm filters and charts work on the first dataset.  
+- After expansion, confirm each sport uses the right world-standard metric. [worldathletics](https://worldathletics.org/athletes/solomon-islands/kevin-pio-14836675)
+
+If you want, the next step can be a **copy-paste prompt per task** so you can feed OpenCode one job at a time.
