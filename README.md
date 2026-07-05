@@ -1,155 +1,167 @@
-# Solomon Islands Sports Dashboard
+# 🏆 Solomon Islands Sports Dashboard
 
-A simple dashboard that tracks Solomon Islands sports performance against world standards across football, athletics, rugby, basketball, and Olympic participation.
+A modern, glassmorphism-styled web dashboard tracking Solomon Islands sports performance against world standards across football, athletics, rugby, basketball, and Olympic participation.
 
----
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-38bdf8?style=flat-square&logo=tailwindcss)
+![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)
+![Recharts](https://img.shields.io/badge/Recharts-2.10-ff6384?style=flat-square)
 
-## What This Does
+## 🔗 Live Demo
 
-This dashboard shows:
-- **Summary cards** with total events, sports covered, and top performers
-- **Filters** to view specific sports, years, competitions, or opponents
-- **Charts** showing events by year and by sport
-- **Detailed results table** with links to original sources
+**[View Live Dashboard →](https://your-project.vercel.app)**
 
----
+## 📸 Screenshots
 
-## How to Open the Dashboard (Step by Step)
+> Dashboard features glassmorphism UI with animated gradient background, frosted glass cards, interactive charts, and responsive design.
 
-### Step 1: Open the Project Folder
-1. Go to your Desktop
-2. Find the folder called `sport analyst`
-3. Open it
+## ✨ Features
 
-### Step 2: Start the Dashboard
-1. Hold the `Shift` key and right-click inside the folder
-2. Select "Open PowerShell window here" or "Open in Terminal"
-3. Type this command and press Enter:
-   ```
-   npm run dev
-   ```
-4. Wait a few seconds until you see "Ready in 3s"
+- **5 Sports Tracked**: Football, Athletics, Rugby, Basketball, Olympic Participation
+- **28 Verified Records** with source URLs from ESPN, World Athletics, Sofascore, Olympedia
+- **Interactive Filters**: Filter by sport, year, competition, or opponent
+- **Visual Analytics**: Bar charts for yearly trends, pie charts for sport distribution
+- **Detailed Results Table**: Sortable data with clickable source links
+- **Modern UI**: Glassmorphism design with animated gradient background
+- **Fully Responsive**: Works on desktop, tablet, and mobile
 
-### Step 3: View in Browser
-1. Open your web browser (Chrome, Edge, Firefox)
-2. Type this in the address bar: `http://localhost:3000`
-3. Press Enter
-4. You should see the Solomon Islands Sports Dashboard
+## 🛠 Tech Stack
 
-### Step 4: Stop the Dashboard
-When you're done:
-1. Go back to the PowerShell/Terminal window
-2. Press `Ctrl + C`
-3. Type `Y` and press Enter
+| Technology | Purpose |
+|------------|---------|
+| **Next.js 14** | React framework with App Router |
+| **React 18** | UI components and state management |
+| **Tailwind CSS 3** | Utility-first styling |
+| **Recharts** | Data visualization (bar & pie charts) |
+| **PapaParse** | CSV data parsing |
 
----
+## 📁 Project Structure
 
-## How to Add New Sports Results
-
-### Step 1: Find the Data File
-1. Open the `sport analyst` folder on your Desktop
-2. Open the `data` folder
-3. Open `solomon_islands_sports.csv` with Notepad or Excel
-
-### Step 2: Add a New Row
-Each row looks like this (all on one line):
 ```
-football,Solomon Islands,Match,New Zealand,2026-04-15,1-2,World Cup Qualifier,FIFA Ranking,168,https://www.espn.com/soccer/match/_/gameId/123456
+sport analyst/
+├── data/
+│   └── solomon_islands_sports.csv    # Sports dataset (28 records)
+├── src/
+│   ├── app/
+│   │   ├── api/data/route.js         # API endpoint for data
+│   │   ├── globals.css               # Global styles
+│   │   ├── layout.js                 # Root layout
+│   │   └── page.js                   # Main dashboard page
+│   ├── components/
+│   │   ├── AnimatedBackground.js     # Floating gradient orbs
+│   │   ├── Charts.js                 # Bar & pie charts
+│   │   ├── Filters.js                # Sport/year/competition filters
+│   │   ├── ResultsTable.js           # Detailed results table
+│   │   └── SummaryCards.js           # Overview stat cards
+│   └── lib/
+│       ├── data.js                   # Client-side data utilities
+│       ├── data-server.js            # Server-side data loading
+│       └── validate.js               # Data validation script
+├── AGENTS.md                         # Project rules
+├── next.config.js                    # Next.js configuration
+├── tailwind.config.js                # Tailwind configuration
+└── package.json                      # Dependencies
 ```
 
-The columns are:
-1. **sport** - football, athletics, rugby, basketball, or olympics
-2. **athlete_or_team** - Team name or athlete name
-3. **event_or_match** - What happened (Match, 100m, etc.)
-4. **opponent_or_country** - Who they played against (leave blank for individual events)
-5. **date** - Date in format YYYY-MM-DD (e.g., 2026-04-15)
-6. **result** - Score or time (e.g., 2-1, 11.54)
-7. **competition** - Name of competition (e.g., World Cup Qualifier)
-8. **world_standard_type** - Type of benchmark (FIFA Ranking, Personal Best, etc.)
-9. **world_standard_value** - The benchmark value
-10. **source_url** - Link to where you found the result
+## 🚀 Getting Started
 
-### Step 3: Save and Refresh
-1. Save the file
-2. Go back to your browser
-3. Refresh the page (press F5 or click the refresh button)
+### Prerequisites
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/solomon-islands-sports-dashboard.git
+
+# Navigate to project directory
+cd solomon-islands-sports-dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📊 Data Schema
+
+Each record follows this normalized structure:
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| `sport` | Sport category | football, athletics, rugby, basketball, olympics |
+| `athlete_or_team` | Team or athlete name | Solomon Islands, Kevin Pio |
+| `event_or_match` | Event type | Match, 100m, Marathon |
+| `opponent_or_country` | Opponent | Bulgaria, Fiji |
+| `date` | Date (YYYY-MM-DD) | 2026-03-27 |
+| `result` | Score or time | 2-10, 11.54 |
+| `competition` | Competition name | International Friendly |
+| `world_standard_type` | Benchmark type | FIFA Ranking, Personal Best |
+| `world_standard_value` | Benchmark value | 129, 737 |
+| `source_url` | Verification URL | https://espn.com/... |
+
+## 📝 Adding New Data
+
+1. Open `data/solomon_islands_sports.csv`
+2. Add a new row following the schema above
+3. Always include a valid `source_url`
+4. Save the file - changes appear on next page load
+
+### Validate Data
+
+```bash
+node src/lib/validate.js
+```
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your GitHub repository
+4. Deploy automatically
+
+### Manual Build
+
+```bash
+npm run build
+npm start
+```
+
+## 🎨 Design System
+
+- **Background**: Animated gradient (deep blue → indigo → teal) with floating orbs
+- **Cards**: Frosted glass with `backdrop-blur(20px)` and subtle borders
+- **Colors**: Solomon Islands flag inspired (Blue #003580, Yellow #FFD700, Green #228B22)
+- **Typography**: Inter font family
+- **Animations**: Floating orbs, hover effects, loading spinner
+
+## 📈 Data Sources
+
+| Source | Sport | URL |
+|--------|-------|-----|
+| ESPN | Football | [espn.com](https://www.espn.com) |
+| World Athletics | Athletics | [worldathletics.org](https://worldathletics.org) |
+| Sofascore | Rugby, Basketball | [sofascore.com](https://www.sofascore.com) |
+| Olympedia | Olympics | [olympedia.org](https://www.olympedia.org) |
+
+## 👤 Author
+
+**Your Name** - [your.email@example.com](mailto:your.email@example.com)
+
+LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+
+Portfolio: [yourportfolio.com](https://yourportfolio.com)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## How to Verify Your Data
-
-To check if your data is correct:
-1. Open PowerShell in the `sport analyst` folder
-2. Type this command:
-   ```
-   node src/lib/validate.js
-   ```
-3. Press Enter
-4. It will tell you if there are any errors
-
----
-
-## What the Colors Mean
-
-- **Blue** = Solomon Islands team color
-- **Green** = Football
-- **Blue** = Athletics
-- **Purple** = Rugby
-- **Orange** = Basketball
-- **Red** = Olympics
-
----
-
-## Common Questions
-
-**Q: Why can't I see the dashboard?**
-A: Make sure you ran `npm run dev` and see "Ready" in the terminal. Then go to `http://localhost:3000`
-
-**Q: How do I add a new sport?**
-A: Just add rows to the CSV file with the new sport name. The dashboard will automatically show it.
-
-**Q: Can I delete old results?**
-A: Yes, just delete the row from the CSV file and save.
-
-**Q: Where does the data come from?**
-A: The data comes from ESPN, World Athletics, Sofascore, and Olympedia. Always include the source URL when adding new results.
-
-**Q: How do I make the dashboard full screen?**
-A: Click the maximize button in the top-right corner of your browser window.
-
----
-
-## Files Explained
-
-| File | What It Does |
-|------|--------------|
-| `data/solomon_islands_sports.csv` | All the sports data (this is what you edit) |
-| `src/app/page.js` | The main dashboard page |
-| `src/components/SummaryCards.js` | The overview cards at the top |
-| `src/components/Filters.js` | The filter dropdowns |
-| `src/components/Charts.js` | The charts showing trends |
-| `src/components/ResultsTable.js` | The detailed results table |
-| `src/lib/validate.js` | Checks if your data is correct |
-| `AGENTS.md` | Rules for how the project works |
-
----
-
-## Getting Help
-
-If something isn't working:
-1. Make sure you followed all the steps above
-2. Check the terminal for error messages
-3. Try stopping and restarting with `npm run dev`
-4. Make sure your CSV file is saved correctly
-
----
-
-## Data Sources
-
-- Football: ESPN (espn.com)
-- Athletics: World Athletics (worldathletics.org)
-- Rugby: Sofascore (sofascore.com)
-- Basketball: Sofascore (sofascore.com)
-- Olympics: Olympedia (olympedia.org)
-
-Always include the source URL when adding new results so others can verify the data.
+*Built with Next.js, React, and Tailwind CSS*
