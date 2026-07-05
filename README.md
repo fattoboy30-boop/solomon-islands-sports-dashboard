@@ -9,7 +9,7 @@ A modern, glassmorphism-styled web dashboard tracking Solomon Islands sports per
 
 ## 🔗 Live Demo
 
-**[View Live Dashboard →](https://your-project.vercel.app)**
+**[View Live Dashboard →](https://solo-sports-dashboard-x3.vercel.app/)**
 
 ## 📸 Screenshots
 
@@ -73,7 +73,7 @@ sport analyst/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/solomon-islands-sports-dashboard.git
+git clone https://github.com/fattoboy30-boop/solomon-islands-sports-dashboard.git
 
 # Navigate to project directory
 cd solomon-islands-sports-dashboard
@@ -152,11 +152,7 @@ npm start
 
 ## 👤 Author
 
-**Your Name** - [your.email@example.com](mailto:your.email@example.com)
-
-LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-
-Portfolio: [yourportfolio.com](https://yourportfolio.com)
+GitHub: [fattoboy30-boop](https://github.com/fattoboy30-boop)
 
 ## 📄 License
 

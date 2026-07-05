@@ -1,0 +1,109 @@
+=====================================================
+  HOW TO DEPLOY YOUR DASHBOARD TO THE INTERNET
+  (Step-by-step for non-tech users)
+=====================================================
+
+WHAT YOU'LL GET:
+- A live website URL you can put on your CV
+- Example: https://solomon-islands-sports.vercel.app
+
+TIME NEEDED: 10-15 minutes
+
+=====================================================
+STEP 1: CREATE A GITHUB ACCOUNT (if you don't have one)
+=====================================================
+
+1. Go to https://github.com
+2. Click "Sign up"
+3. Enter your email, create a password, pick a username
+4. Verify your email
+
+=====================================================
+STEP 2: CREATE A NEW REPOSITORY ON GITHUB
+=====================================================
+
+1. Go to https://github.com/new
+2. Repository name: solomon-islands-sports-dashboard
+3. Description: "Solomon Islands Sports Performance Dashboard"
+4. Select: Public
+5. DO NOT check "Add a README file" (we already have one)
+6. Click "Create repository"
+
+=====================================================
+STEP 3: UPLOAD YOUR FILES TO GITHUB
+=====================================================
+
+1. On the new repository page, click "uploading an existing file"
+2. Drag and drop ALL files from your "sport analyst" folder
+   EXCEPT: node_modules, .next, .git
+3. Or use the "choose your files" link
+4. Click "Commit changes"
+
+=====================================================
+STEP 4: DEPLOY TO VERCEL (FREE)
+=====================================================
+
+1. Go to https://vercel.com
+2. Click "Sign Up"
+3. Click "Continue with GitHub" (use the same account)
+4. Authorize Vercel to access your repositories
+5. Click "Add New..." then "Project"
+6. Find "solomon-islands-sports-dashboard" and click "Import"
+7. Click "Deploy" (don't change any settings)
+8. Wait 1-2 minutes for deployment to finish
+9. Click "Visit" to see your live dashboard!
+
+=====================================================
+STEP 5: GET YOUR LIVE URL
+=====================================================
+
+After deployment, Vercel gives you a URL like:
+https://solomon-islands-sports-xxxx.vercel.app
+
+That's YOUR live dashboard! 
+
+To make it shorter/cleaner:
+1. In Vercel dashboard, go to your project
+2. Click "Settings"
+3. Click "Domains"
+4. Type a custom name (e.g., "solomon-sports")
+5. It becomes: solomon-sports.vercel.app
+
+=====================================================
+STEP 6: ADD TO YOUR CV
+=====================================================
+
+In your CV/resume, add this under "Projects":
+
+  Solomon Islands Sports Dashboard
+  https://your-url.vercel.app
+
+  • Built a full-stack sports analytics dashboard tracking 
+    Solomon Islands performance across 5 sports
+  • Implemented glassmorphism UI with animated backgrounds,
+    interactive charts (Recharts), and responsive design
+  • Used Next.js 14, React 18, Tailwind CSS, and PapaParse
+  • Deployed on Vercel with CI/CD from GitHub
+
+=====================================================
+TROUBLESHOOTING
+=====================================================
+
+Problem: "npm is not recognized"
+Solution: Install Node.js from https://nodejs.org (LTS version)
+
+Problem: Files won't upload to GitHub
+Solution: Make sure you're not uploading node_modules folder
+
+Problem: Vercel build fails
+Solution: Make sure package.json is in the root of your repo
+
+Problem: Dashboard shows "Loading" forever
+Solution: Check browser console (F12) for errors
+
+=====================================================
+NEED HELP?
+=====================================================
+
+Email: your.email@example.com
+GitHub: github.com/yourusername
